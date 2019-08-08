@@ -30,7 +30,7 @@ class App extends Component {
       const sunsetDate = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 
       this.setState({
-        temp: data.main.temp,
+        temp: `${parseInt(data.main.temp - 273.15, 10)}℃`,
         city: data.name,
         country: data.sys.country,
         pressure: data.main.pressure,
@@ -44,7 +44,7 @@ class App extends Component {
         country: '',
         pressure: '',
         sunset: '',
-        error: 'PLS enter the value'
+        error: 'PLS enter the city'
       });
     }
   };
